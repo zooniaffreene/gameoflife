@@ -13,15 +13,15 @@ public class TestSuite {
 
         // Set a single cell, then check that it has zero neighbors.
         board.set(2, 2, data);
-        pass &= expect(board.countNeighbors(2,2), 0, "Single live cell with zero neighbors");
+        pass &= expect(board.countNeighbors(2,2), 0, "Living alone");
 
         // Set the middle top neighbor.
         board.set(1, 2, data);
-        pass &= expect(board.countNeighbors(2,2), 1, "Single live cell with one neighbor");
+        pass &= expect(board.countNeighbors(2,2), 1, "One neighbor");
 
         // Set the bottom middle neighbor.
         board.set(3, 2, data);
-        pass &= expect(board.countNeighbors(2,2), 2, "Single live cell with two neighbors");
+        pass &= expect(board.countNeighbors(2,2), 2, "Two neighbors");
 
         // Test update state
         board.step();
